@@ -6,5 +6,19 @@ pipeline {
         echo 'Hello world'
       }
     }
+    stage('Test One') {
+      parallel {
+        stage('Test') {
+          steps {
+            echo 'test two'
+          }
+        }
+        stage('') {
+          steps {
+            echo 'test one'
+          }
+        }
+      }
+    }
   }
 }
